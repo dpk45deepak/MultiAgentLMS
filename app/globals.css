@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream: #FFF9EE;
+    --pastel-blue: #B9D9F5;
+    --sky-blue: #D7EAFB;
+    --powder-pink: #F8C9D4;
+    --soft-peach: #FFE2D0;
+    --butter-yellow: #FFE9A8;
+    --mint-green: #D6EAD6;
+    --lavender: #E6DDF8;
+    --dark-navy: #24364B;
+    --muted-gray: #6C7C91;
+  }
+
+  html {
+    background-color: #FFF9EE;
+    scroll-behavior: smooth;
+    color: #24364B;
+  }
+
+  body {
+    background-color: #FFF9EE;
+    color: #24364B;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #D7EAFB;
+    color: #24364B;
+  }
+
+  *,
+  *::before,
+  *::after {
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), 'Fredoka', sans-serif;
+    color: #24364B;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #5A9BD5;
+    outline-offset: 2px;
+  }
+
+  /* Kawaii Pastel Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF9EE;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B9D9F5;
+    border: 2px solid #FFF9EE;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8EBBE3;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Retro Desktop Wallpaper with soft dreamy clouds and sparkles */
+  .desktop-wallpaper {
+    background-color: #FFF9EE;
+    background-image: 
+      radial-gradient(#D7EAFB 1.2px, transparent 1.2px),
+      radial-gradient(#FFE9A8 1.2px, transparent 1.2px);
+    background-size: 48px 48px;
+    background-position: 0 0, 24px 24px;
+  }
+
+  /* Retro Desktop Window Frame */
+  .retro-window {
+    background-color: #FFFFFF;
+    border: 2px solid #B9D9F5;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px -5px rgba(36, 54, 75, 0.12), 0 4px 12px -2px rgba(36, 54, 75, 0.06);
+    overflow: hidden;
+  }
+
+  .retro-window-titlebar {
+    background: linear-gradient(180deg, #C7E2FA 0%, #B9D9F5 100%);
+    border-bottom: 2px solid #A5CCED;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Kawaii Washi Tape effect */
+  .washi-tape {
+    position: relative;
+  }
+  .washi-tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1.5deg);
+    width: 72px;
+    height: 18px;
+    background: rgba(248, 201, 212, 0.65);
+    border-left: 2px dashed rgba(255, 255, 255, 0.8);
+    border-right: 2px dashed rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 3px rgba(36, 54, 75, 0.1);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .washi-tape-yellow::before {
+    background: rgba(255, 233, 168, 0.7);
+  }
+
+  .washi-tape-blue::before {
+    background: rgba(185, 217, 245, 0.7);
+  }
+
+  .washi-tape-mint::before {
+    background: rgba(214, 234, 214, 0.7);
+  }
+
+  /* Pastel Sticky Note */
+  .sticky-note {
+    background-color: #FFE9A8;
+    color: #24364B;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 2px 4px 14px rgba(36, 54, 75, 0.08);
+    transform: rotate(1deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1.01);
+    box-shadow: 4px 8px 18px rgba(36, 54, 75, 0.12);
+  }
+
+  /* Paperclip Tag (like reference image attachments: 📎 Confidence, etc.) */
+  .paperclip-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #D7EAFB;
+    color: #24364B;
+    border: 1.5px solid #B9D9F5;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 0 0 #A8CFF5;
+    transition: all 0.15s ease;
+  }
+  .paperclip-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 0 0 #A8CFF5;
+    background-color: #CBE2F9;
+  }
+
+  /* Desktop Folder Shortcut */
+  .desktop-shortcut-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .desktop-shortcut-folder:hover {
+    background: rgba(185, 217, 245, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Glass Card with pastel touch */
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid #D7EAFB;
+    box-shadow: 0 4px 14px -2px rgba(36, 54, 75, 0.06);
+  }
+
+  .rule {
+    border-top: 1.5px solid #D7EAFB;
+  }
+
+  .rule-thick {
+    border-top: 2px solid #B9D9F5;
+  }
+}

@@ -1,0 +1,35 @@
+-- =============================================================================
+-- Demo/development data — NOT for production.
+-- This file inserts nothing until you replace :demo_user_id below with a
+-- real auth.users id (create one by registering through the app, then copy
+-- its id from the Supabase Auth dashboard). Never run this against real
+-- student accounts.
+-- =============================================================================
+
+-- Example (uncomment and fill in after creating a dev account):
+--
+-- insert into subjects (user_id, name) values ('<demo_user_id>', 'Operating Systems')
+--   returning id \gset subject_
+--
+-- insert into units (subject_id, name, order_index)
+--   values (:'subject_id', 'Unit 3: Deadlocks', 0) returning id \gset unit_
+--
+-- insert into topics (user_id, subject_id, unit_id, name, normalized_name, order_index)
+--   values ('<demo_user_id>', :'subject_id', :'unit_id', 'Deadlocks', 'deadlocks', 0);
+
+-- The app itself is the intended way to create demo content: register an
+-- account, then use /learn with one of the syllabus snippets below.
+
+-- Demo syllabus text snippets (paste into "Paste syllabus text" on /learn):
+--
+-- Operating Systems
+-- Unit 1: Process Management
+-- Process Management
+-- CPU Scheduling
+-- Deadlocks
+--
+-- Database Management Systems
+-- Unit 2: Relational Model
+-- Normalization
+-- ER to Relational Mapping
+-- Transactions and ACID properties
